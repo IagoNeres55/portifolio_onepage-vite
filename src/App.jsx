@@ -1,9 +1,9 @@
-import NavBar from "./pages/NavBar";
+import Index from "./pages";
 import { ChakraProvider } from "@chakra-ui/react";
 function App() {
   return (
     <ChakraProvider>
-      <NavBar />
+      <Index />
     </ChakraProvider>
   );
 }
