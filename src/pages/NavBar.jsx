@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Link } from "@chakra-ui/react";
 import { Github, Linkedin } from "lucide-react";
 
 export default function NavBar() {
@@ -18,17 +18,36 @@ export default function NavBar() {
         alignItems={{ base: "start", md: "center" }}
         ml={{ base: 50, md: 0 }}
       >
-        <Text>Projetos</Text>
-        <Text>Tecnologias</Text>
-        <Text>Sobre mim</Text>
+        <Text>
+          <a href="#projetos" textDecoration="none">
+            Projetos
+          </a>
+        </Text>
+        <Text>
+          <a href="#Tecnologias" textDecoration="none">
+            Tecnologias
+          </a>
+        </Text>
+        <Text>
+          <a href="#Sobre" textDecoration="none">
+            Sobre mim
+          </a>
+        </Text>
       </Flex>
       <Flex
         mr={{ base: 50, md: 0 }}
         gap={8}
         direction={{ base: "column", md: "row" }}
       >
-        <Github size={25} />
-        <Linkedin size={25} />
+        <Link href="https://github.com/IagoNeres55" isExternal>
+          <Github size={25} />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/iago-neres-81b368146/"
+          isExternal
+        >
+          <Linkedin size={25} />
+        </Link>
       </Flex>
     </Flex>
   );
