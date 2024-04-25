@@ -32,10 +32,10 @@ export default function SectionText() {
   return (
     <Flex justify="center" flexDirection="column" ml="10%" mt="8%">
       <Text
-        fontSize={{ base: "1.7rem", md: "2.5rem" }}
+        fontSize={{ base: "1.5rem", md: "2.5rem" }}
         fontFamily={"Poppins, sans-serif"}
         fontWeight="600"
-        height={"18vh"}
+        height={{ base: "24vh", md: "18vh" }}
         w={"80%"}
       >
         {text}
@@ -45,7 +45,7 @@ export default function SectionText() {
         w={{ base: "70%", md: "65%" }}
         ml="3%"
         mt={{ base: "5%", md: "1%" }}
-        fontSize={{ base: "1.2rem", md: "1.4rem" }}
+        fontSize={{ base: "1rem", md: "1.4rem" }}
       >
         Tenho 23 anos e sou formado em Análise e Desenvolvimento de Sistemas.
         Atuo como desenvolvedor há algum tempo, sempre pensando além dos limites
