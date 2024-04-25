@@ -1,24 +1,57 @@
+import { useState, useEffect } from "react";
 import { Flex, Text, Button } from "@chakra-ui/react";
 import "@fontsource/poppins";
+
 export default function SectionText() {
+  const phrases = [
+    "Seja Bem-vindo ao meu espaço digital!",
+    "É um prazer ter você aqui! me chamo Iago, sou de Guarulhos-SP",
+    "Conheça um pouco sobre a minha trajetória profissional e experiências...",
+    "Vamos nos conectar! Confira meu GitHub e LinkedIn...",
+  ];
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < phrases[phraseIndex].length) {
+      const timeoutId = setTimeout(() => {
+        setText(text + phrases[phraseIndex].charAt(index));
+        setIndex(index + 1);
+      }, 100);
+
+      return () => clearTimeout(timeoutId);
+    } else {
+      setTimeout(() => {
+        setText("");
+        setIndex(0);
+        setPhraseIndex((phraseIndex + 1) % phrases.length);
+      }, 2000);
+    }
+  }, [text, index, phraseIndex]);
   return (
     <Flex justify="center" flexDirection="column" ml="10%" mt="8%">
       <Text
-        fontSize={{ base: "1.7rem", md: "2.6rem" }}
+        fontSize={{ base: "1.7rem", md: "2.5rem" }}
         fontFamily={"Poppins, sans-serif"}
         fontWeight="600"
+        height={"18vh"}
+        w={"80%"}
       >
-        Lorem ipsum dolor sit amet
+        {text}
       </Text>
       <Text
         color="#BCBCBC"
-        w={{ base: "70%", md: "50%" }}
+        w={{ base: "70%", md: "65%" }}
         ml="3%"
         mt={{ base: "5%", md: "1%" }}
-        fontSize={{ base: "1.3rem", md: "1.6rem" }}
+        fontSize={{ base: "1.2rem", md: "1.4rem" }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.{" "}
+        Tenho 23 anos e sou formado em Análise e Desenvolvimento de Sistemas.
+        Atuo como desenvolvedor há algum tempo, sempre pensando além dos limites
+        convencionais para entregar soluções rápidas e precisas. Meu principal
+        objetivo é gerar valor através das minhas entregas, priorizando sempre a
+        qualidade e a escalabilidade dos produtos.
       </Text>
       <Button
         w={{ base: "45%", md: "16%" }}
@@ -28,6 +61,12 @@ export default function SectionText() {
         ml="4%"
         mt={{ base: "8%", md: "4%" }}
         _hover="linear(to-r, #2cd4f1, #2f4be6, #8331e8)"
+        onClick={() => {
+          window.open(
+            "https://www.linkedin.com/in/iago-neres-81b368146/",
+            "_blank"
+          );
+        }}
       >
         Saber Mais
       </Button>

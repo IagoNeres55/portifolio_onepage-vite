@@ -18,20 +18,37 @@ export default function projects({ img, titulo, texto, link }) {
       <Text mb={3} fontSize={"1.5rem"}>
         {titulo}
       </Text>
-      <Text mb={3} w={"90%"} fontSize={".9rem"}>
+      <Text textAlign={"center"} mb={3} w={"90%"} fontSize={".9rem"}>
         {texto}
       </Text>
-      <Button
-        fontSize={"0.8rem"}
-        w={"50%"}
-        color="#fff"
-        bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
-        borderRadius="28px"
-        // mt="2%"
-        _hover="linear(to-r, #2cd4f1, #2f4be6, #8331e8)"
-      >
-        {link}
-      </Button>
+      {link ? (
+        <Button
+          fontSize={"0.8rem"}
+          w={"50%"}
+          color="#fff"
+          bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+          borderRadius="28px"
+          // mt="2%"
+          _hover="linear(to-r, #2cd4f1, #2f4be6, #8331e8)"
+          onClick={() => {
+            window.open(`${link}`, "_blank");
+          }}
+        >
+          Clique aqui
+        </Button>
+      ) : (
+        <Button
+          fontSize={"0.8rem"}
+          w={"50%"}
+          color="#fff"
+          bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+          borderRadius="28px"
+          // mt="2%"
+          _hover="linear(to-r, #2cd4f1, #2f4be6, #8331e8)"
+        >
+          Clique aqui
+        </Button>
+      )}
     </Flex>
   );
 }

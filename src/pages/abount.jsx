@@ -40,6 +40,7 @@ export default function abount() {
         fontSize={{ base: "1.8rem", md: "2.6rem" }}
         fontWeight={"600"}
         textAlign={{ base: "center", md: "start" }}
+        id="Sobre"
       >
         Sobre mim
       </Text>
