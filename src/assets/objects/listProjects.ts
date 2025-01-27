@@ -18,7 +18,7 @@ export const listProjects = [
     texto:
       "Projeto simples, One page usando ferramentas como HTML, CSS, JS e BOOTSTRAP, consumindo APIs externas.",
     link: "https://dsf-consultacep.netlify.app/",
-    img: "./src/assets/images/previsaoTempo.png",
+    img: "../images/previsaoTempo.png",
   },
   {
     titulo: "Projeto de Vendas Back-end",
