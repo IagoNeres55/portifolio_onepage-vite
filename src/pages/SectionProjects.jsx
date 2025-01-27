@@ -41,7 +41,7 @@ export default function SectionProjects() {
             mb={10}
           >
             <Projects
-              img={"/imagens/previsaoTempo.png"}
+              img={project.img}
               titulo={project.titulo}
               texto={project.texto}
               link={project.link}
