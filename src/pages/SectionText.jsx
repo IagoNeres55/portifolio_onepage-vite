@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import { Flex, Text, Button } from "@chakra-ui/react";
 import "@fontsource/poppins";
+import { phrases } from "../assets/objects/textApresents";
 
 export default function SectionText() {
-  const phrases = [
-    "Seja Bem-vindo ao meu espaço digital!",
-    "É um prazer ter você aqui! me chamo Iago, sou de Guarulhos-SP",
-    "Conheça um pouco sobre a minha trajetória profissional e experiências...",
-    "Vamos nos conectar! Confira meu GitHub e LinkedIn...",
-  ];
+ 
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -29,6 +25,7 @@ export default function SectionText() {
       }, 2000);
     }
   }, [text, index, phraseIndex]);
+
   return (
     <Flex justify="center" flexDirection="column" ml="10%" mt="8%">
       <Text
