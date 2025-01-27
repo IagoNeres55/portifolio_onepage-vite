@@ -14,7 +14,13 @@ export default function projects({ img, titulo, texto, link }) {
       justify={"center"}
       alignItems={"center"}
     >
-      <Image mb={3} w={80} objectFit="cover" src={img} alt="teste" />
+      <Image
+        mb={3}
+        w={80}
+        objectFit="cover"
+        src={`../../assets/images/${img}`}
+        alt="teste"
+      />
       <Text mb={3} fontSize={"1.5rem"}>
         {titulo}
       </Text>
