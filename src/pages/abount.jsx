@@ -1,33 +1,10 @@
 import { Flex, Text, Circle } from "@chakra-ui/react";
-
+import { trilhaDev } from "../assets/objects/trilhaDev";
 export default function abount() {
-  const events = [
-    {
-      year: "2021",
-      description:
-        "Iniciei minha jornada no suporte técnico de TI, equilibrando responsabilidades profissionais com estudos acadêmicos.",
-    },
-    {
-      year: "2022",
-      description:
-        "Avancei na minha carreira para a programação, trabalhando em pequenos projetos e fazendo a transição de suporte N1 para suporte N2, encarando novos desafios e expandindo minhas habilidades.",
-    },
-    {
-      year: "2023",
-      description:
-        "Mergulhei no desenvolvimento mobile, criando alguns projetos que como controle de processos, sistemas de trafego entre outros onde adquirir muita experiência com aplicativos.",
-    },
-    {
-      year: "2024",
-      description:
-        "Concluí minha graduação, com uma formação completa e já atuando como desenvolvedor, capacitado a construir soluções de software abrangentes.",
-    },
-  ];
-
   return (
     <Flex
       color={"white"}
-      mt={150}
+      mt={260}
       justify={"center"}
       alignItems={"center"}
       w={"full"}
@@ -67,7 +44,7 @@ export default function abount() {
             bg="white"
             w={{ base: 0, md: "full" }}
           />
-          {events.map((item) => (
+          {trilhaDev.map((item) => (
             <Flex
               fontSize={"1rem"}
               key={item.year}

@@ -47,8 +47,8 @@ export default function SectionText() {
         mt={{ base: "5%", md: "1%" }}
         fontSize={{ base: "1rem", md: "1.4rem" }}
       >
-        Tenho 23 anos e sou formado em Análise e Desenvolvimento de Sistemas.
-        Atuo como desenvolvedor há algum tempo, sempre pensando além dos limites
+        Tenho 24 anos e sou formado em Análise e Desenvolvimento de Sistemas.
+        Atuo como desenvolvedor há mais de 2 anos, sempre pensando além dos limites
         convencionais para entregar soluções rápidas e precisas. Meu principal
         objetivo é gerar valor através das minhas entregas, priorizando sempre a
         qualidade e a escalabilidade dos produtos.

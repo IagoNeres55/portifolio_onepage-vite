@@ -8,6 +8,7 @@ export default function Footer() {
       justify="space-around"
       h="40vh"
       align={"center"}
+
     >
       <Box>
         <Text fontSize={"2rem"} fontWeight={"700"}>
