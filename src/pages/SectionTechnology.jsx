@@ -43,7 +43,7 @@ export default function SectionTechnology() {
     { name: "Express.js", icon: SiExpress, color: "yellow.400" },
     { name: "Git", icon: FaGitAlt, color: "orange.600" },
     { name: "Docker", icon: FaDocker, color: "blue.500" },
-    { name: "AWS", icon: FaAws, color: "blue.500" }
+    { name: "AWS", icon: FaAws, color: "blue.500" },
     { name: "AZURE", icon: VscAzure, color: "orange.500",  },
     { name: "Redux", icon: SiRedux, color: "purple.500",  },
     { name: "Oracle", icon: GrOracle, color: "orange.500",  },
