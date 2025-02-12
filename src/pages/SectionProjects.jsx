@@ -3,7 +3,6 @@ import Projects from "./components/projects";
 import { listProjects } from "../assets/objects/listProjects";
 
 export default function SectionProjects() {
-  console.log("teste");
   return (
     <Flex
       color={"white"}
