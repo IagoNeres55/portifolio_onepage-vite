@@ -15,13 +15,13 @@ export const listProjects = [
     link: "",
     img: "kmcontrole.png",
   },
-  {
-    titulo: "Previsão do Tempo",
-    texto:
-      "Projeto simples, One page usando ferramentas como HTML, CSS, JS e BOOTSTRAP, consumindo APIs externas.",
-    link: "https://dsf-consultacep.netlify.app/",
-    img: "previsaoTempo.png",
-  },
+  // {
+  //   titulo: "Previsão do Tempo",
+  //   texto:
+  //     "Projeto simples, One page usando ferramentas como HTML, CSS, JS e BOOTSTRAP, consumindo APIs externas.",
+  //   link: "https://dsf-consultacep.netlify.app/",
+  //   img: "previsaoTempo.png",
+  // },
   {
     titulo: "Projeto de Vendas Back-end",
     texto:
