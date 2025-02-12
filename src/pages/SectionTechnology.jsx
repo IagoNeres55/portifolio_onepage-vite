@@ -1,11 +1,13 @@
 import { Flex, Box, Icon, Text } from "@chakra-ui/react";
 import {
+  FaAws,
   FaDocker,
   FaGitAlt,
   FaNodeJs,
   FaPython,
   FaReact,
 } from "react-icons/fa";
+import { GrOracle } from "react-icons/gr";
 import {
   SiTypescript,
   SiChakraui,
@@ -24,7 +26,10 @@ import {
   SiAndroid,
   SiApple,
   SiExpo,
+  SiRedux,
+  SiOracle,
 } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 export default function SectionTechnology() {
   const technologies = [
@@ -38,6 +43,10 @@ export default function SectionTechnology() {
     { name: "Express.js", icon: SiExpress, color: "yellow.400" },
     { name: "Git", icon: FaGitAlt, color: "orange.600" },
     { name: "Docker", icon: FaDocker, color: "blue.500" },
+    { name: "AWS", icon: FaAws, color: "blue.500" },
+    { name: "AZURE", icon: VscAzure, color: "orange.500",  },
+    { name: "Redux", icon: SiRedux, color: "purple.500",  },
+    { name: "Oracle", icon: GrOracle, color: "orange.500",  },
     // { name: "Kubernetes", icon: SiKubernetes, color: "blue.400" },
     { name: "MongoDB", icon: SiMongodb, color: "green.500" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "blue.500" },
