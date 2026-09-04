@@ -1,54 +1,109 @@
-import { Flex, Text, Link } from "@chakra-ui/react";
-import { Github, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { Box, Flex, Text, Link, IconButton, Collapse } from "@chakra-ui/react";
+import { Github, Linkedin, Menu, X } from "lucide-react";
+
+const links = [
+  { href: "#projetos", label: "Projetos" },
+  { href: "#Tecnologias", label: "Tecnologias" },
+  { href: "#Sobre", label: "Sobre mim" },
+];
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Flex
-      direction={{ base: "row", md: "row" }}
-      w="full"
-      h={{ base: "auto", md: 65 }}
-      alignItems={{ base: "start", md: "center" }}
-      p={{ base: 4, md: 0 }}
+    <Box
+      as="nav"
+      position="sticky"
+      top={0}
+      zIndex={20}
+      bg="rgba(11, 17, 32, 0.75)"
+      backdropFilter="blur(10px)"
+      borderBottom="1px solid"
+      borderColor="whiteAlpha.100"
     >
       <Flex
-        justifyContent="center"
-        w={{ base: "full", md: "80%" }}
-        gap={{ base: 2, md: 20 }}
-        direction={{ base: "column", md: "row" }}
-        alignItems={{ base: "start", md: "center" }}
-        ml={{ base: 50, md: 0 }}
+        maxW="1200px"
+        mx="auto"
+        w="full"
+        h={16}
+        align="center"
+        justify="space-between"
+        px={{ base: 4, md: 8 }}
       >
-        <Text>
-          <a href="#projetos" textDecoration="none">
-            Projetos
-          </a>
-        </Text>
-        <Text>
-          <a href="#Tecnologias" textDecoration="none">
-            Tecnologias
-          </a>
-        </Text>
-        <Text>
-          <a href="#Sobre" textDecoration="none">
-            Sobre mim
-          </a>
-        </Text>
-      </Flex>
-      <Flex
-        mr={{ base: 50, md: 0 }}
-        gap={8}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Link href="https://github.com/IagoNeres55" isExternal>
-          <Github size={25} />
+        <Link href="#" _hover={{ textDecoration: "none" }}>
+          <Text
+            fontWeight="700"
+            fontSize="1.15rem"
+            bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+            bgClip="text"
+          >
+            Iago Neres
+          </Text>
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/iago-neres-81b368146/"
-          isExternal
+
+        <Flex display={{ base: "none", md: "flex" }} gap={10} align="center">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              fontSize=".95rem"
+              _hover={{ color: "#13ADC7", textDecoration: "none" }}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </Flex>
+
+        <Flex display={{ base: "none", md: "flex" }} gap={5} align="center">
+          <Link href="https://github.com/IagoNeres55" isExternal>
+            <Github size={22} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/iago-neres-81b368146/"
+            isExternal
+          >
+            <Linkedin size={22} />
+          </Link>
+        </Flex>
+
+        <IconButton
+          display={{ base: "flex", md: "none" }}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          icon={isOpen ? <X size={22} /> : <Menu size={22} />}
+          variant="ghost"
+          color="white"
+          _hover={{ bg: "whiteAlpha.100" }}
+          onClick={() => setIsOpen(!isOpen)}
+        />
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <Flex
+          direction="column"
+          gap={4}
+          px={6}
+          pb={6}
+          display={{ base: "flex", md: "none" }}
         >
-          <Linkedin size={25} />
-        </Link>
-      </Flex>
-    </Flex>
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+              {link.label}
+            </Link>
+          ))}
+          <Flex gap={5} mt={2}>
+            <Link href="https://github.com/IagoNeres55" isExternal>
+              <Github size={22} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/iago-neres-81b368146/"
+              isExternal
+            >
+              <Linkedin size={22} />
+            </Link>
+          </Flex>
+        </Flex>
+      </Collapse>
+    </Box>
   );
 }

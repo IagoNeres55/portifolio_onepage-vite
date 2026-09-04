@@ -1,22 +1,22 @@
 export const trilhaDev = [
   {
-    year: "2021",
-    description:
-      "Comecei minha trajetória no suporte técnico de TI, dividindo meu tempo entre trabalho e faculdade. Foi um período intenso de aprendizado, onde desenvolvi habilidades essenciais para resolver problemas e lidar com desafios técnicos.",
-  },
-  {
     year: "2022",
     description:
-      "Dei meus primeiros passos na programação, participando de pequenos projetos e migrando do suporte N1 para N2. Esse avanço me permitiu enfrentar desafios mais complexos, aprimorar meu raciocínio lógico e expandir meu conhecimento técnico.",
+      "Iniciei a graduação em Análise e Desenvolvimento de Sistemas no Centro Universitário ENIAC e comecei a atuar como Analista de Suporte, dando os primeiros passos em T.I. e programação.",
   },
   {
     year: "2023",
     description:
-      "Aprofundei meus conhecimentos em desenvolvimento mobile, criando projetos voltados para controle de processos, gestão de tráfego e outras soluções inovadoras. Foi um ano decisivo, onde ganhei experiência prática e aprimorei minhas habilidades na construção de aplicativos eficientes.",
+      "Aprofundei meus conhecimentos com o curso de Engenharia de Software na Escola DNC, estudando arquitetura, modelagem de sistemas e boas práticas de desenvolvimento orientado a objetos.",
   },
   {
     year: "2024",
     description:
-      "Com a graduação concluída e experiência consolidada, estou atuando como desenvolvedor Full Stack, pronto para criar soluções de software robustas e inovadoras. Meu foco agora é seguir evoluindo e contribuindo para projetos que fazem a diferença.",
+      "Concluí a graduação em ADS e fui promovido a Desenvolvedor Jr, passando a construir aplicações completas em back-end, front-end e mobile com foco em performance e escalabilidade.",
+  },
+  {
+    year: "2025/26",
+    description:
+      "Atuando com arquiteturas de microsserviços, containerização, cloud (AWS) e integração de soluções de Inteligência Artificial (LLMs e servidores MCP) em produtos reais.",
   },
 ];

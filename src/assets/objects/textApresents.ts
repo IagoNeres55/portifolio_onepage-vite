@@ -1,6 +1,6 @@
 export const phrases = [
-  "Seja Bem-vindo ao meu espaço digital!",
-  "É um prazer ter você aqui! me chamo Iago, sou de Guarulhos-SP",
-  "Conheça um pouco sobre a minha trajetória profissional e experiências...",
+  "Seja bem-vindo ao meu espaço digital!",
+  "Me chamo Iago, Desenvolvedor Full Stack",
+  "Construo aplicações web, mobile e back-end com arquiteturas escaláveis.",
   "Vamos nos conectar! Confira meu GitHub e LinkedIn...",
 ];

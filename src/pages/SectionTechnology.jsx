@@ -1,111 +1,208 @@
-import { Flex, Box, Icon, Text } from "@chakra-ui/react";
-import {
-  FaAws,
-  FaDocker,
-  FaGitAlt,
-  FaNodeJs,
-  FaPython,
-  FaReact,
-} from "react-icons/fa";
-import { GrOracle } from "react-icons/gr";
+import { Flex, Box, Icon, Text, VStack } from "@chakra-ui/react";
+import { FaAws, FaDocker, FaGitAlt, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import {
   SiTypescript,
-  SiChakraui,
-  SiNextdotjs,
-  SiMongodb,
-  SiPostgresql,
-  SiRedis,
-  SiFirebase,
-  SiAngular,
-  SiTailwindcss,
+  SiJavascript,
+  SiC,
+  SiDotnet,
+  SiFastapi,
   SiNestjs,
+  SiAdonisjs,
   SiExpress,
-  SiJest,
-  SiCypress,
+  SiNextdotjs,
+  SiAngular,
+  SiVuedotjs,
+  SiTailwindcss,
+  SiChakraui,
+  SiPostgresql,
   SiMysql,
-  SiAndroid,
-  SiApple,
-  SiExpo,
-  SiRedux,
   SiOracle,
+  SiMongodb,
+  SiRedis,
+  SiRedux,
+  SiScrumalliance,
+  SiSwagger,
 } from "react-icons/si";
-import { VscAzure } from "react-icons/vsc";
+import {
+  Smartphone,
+  Database,
+  Workflow,
+  Layers,
+  Bot,
+  Sparkles,
+  Cpu,
+  Kanban,
+  Code2,
+  TestTube,
+  Braces,
+  Zap,
+  BotMessageSquare,
+  Network,
+  TrendingUp,
+  Gauge,
+  Puzzle,
+  Blocks,
+  GitPullRequest,
+} from "lucide-react";
+
+const technologyCategories = [
+  {
+    category: "Linguagens",
+    items: [
+      { name: "Python", icon: FaPython, color: "#FFD43B" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "SQL", icon: Database, color: "#8FD3E8" },
+      { name: "C", icon: SiC, color: "#A8B9CC" },
+      { name: "C# / .NET", icon: SiDotnet, color: "#8C52E1" },
+    ],
+  },
+  {
+    category: "Back-end",
+    items: [
+      { name: "Node.js", icon: FaNodeJs, color: "#68A063" },
+      { name: "FastAPI", icon: SiFastapi, color: "#05998b" },
+      { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+      { name: "AdonisJS", icon: SiAdonisjs, color: "#5A45FF" },
+      { name: "Express.js", icon: SiExpress, color: "#F4F4F4" },
+    ],
+  },
+  {
+    category: "Front-end & Mobile",
+    items: [
+      { name: "React", icon: FaReact, color: "#61DAFB" },
+      { name: "React Native", icon: Smartphone, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#F4F4F4" },
+      { name: "Angular", icon: SiAngular, color: "#DD0031" },
+      { name: "Vue.js", icon: SiVuedotjs, color: "#42B883" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+      { name: "Chakra UI", icon: SiChakraui, color: "#2FD3B7" },
+      { name: "Redux", icon: SiRedux, color: "#764ABC" },
+    ],
+  },
+  {
+    category: "Banco de Dados",
+    items: [
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "MySQL", icon: SiMysql, color: "#F2C94C" },
+      { name: "Oracle", icon: SiOracle, color: "#F2622E" },
+      { name: "MongoDB / NoSQL", icon: SiMongodb, color: "#47A248" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+    ],
+  },
+  {
+    category: "Cloud & DevOps",
+    items: [
+      { name: "AWS", icon: FaAws, color: "#FF9900" },
+      { name: "Docker", icon: FaDocker, color: "#2496ED" },
+      { name: "Git", icon: FaGitAlt, color: "#F1502F" },
+      { name: "Pipelines CI/CD", icon: Workflow, color: "#8FD3E8" },
+      { name: "Infraestrutura como Código", icon: Network, color: "#8FD3E8" },
+      { name: "Balanceamento de Carga", icon: Layers, color: "#8FD3E8" },
+      { name: "Escalabilidade Horizontal", icon: TrendingUp, color: "#8FD3E8" },
+      { name: "Monitoramento & Observabilidade", icon: Gauge, color: "#8FD3E8" },
+    ],
+  },
+  {
+    category: "IA & Automação",
+    items: [
+      { name: "Integração de LLMs", icon: Bot, color: "#945DD6" },
+      { name: "APIs de IA", icon: Sparkles, color: "#6978D1" },
+      { name: "Servidores MCP", icon: Cpu, color: "#13ADC7" },
+      { name: "Engenharia de Prompt", icon: Braces, color: "#945DD6" },
+      { name: "Automação de Processos", icon: Zap, color: "#6978D1" },
+      { name: "Agentes de IA", icon: BotMessageSquare, color: "#13ADC7" },
+    ],
+  },
+  {
+    category: "Metodologias",
+    items: [
+      { name: "Scrum", icon: SiScrumalliance, color: "#009FDA" },
+      { name: "Kanban", icon: Kanban, color: "#8FD3E8" },
+      { name: "Clean Code", icon: Code2, color: "#8FD3E8" },
+      { name: "Princípios SOLID", icon: Puzzle, color: "#8FD3E8" },
+      { name: "Design Patterns", icon: Blocks, color: "#8FD3E8" },
+      { name: "Testes Automatizados", icon: TestTube, color: "#8FD3E8" },
+      { name: "Code Review", icon: GitPullRequest, color: "#8FD3E8" },
+      { name: "Documentação (Swagger)", icon: SiSwagger, color: "#85EA2D" },
+    ],
+  },
+];
 
 export default function SectionTechnology() {
-  const technologies = [
-    { name: "Node.js", icon: FaNodeJs, color: "green.500" },
-    { name: "React", icon: FaReact, color: "blue.500" },
-    { name: "TypeScript", icon: SiTypescript, color: "blue.300" },
-    { name: "Next.js", icon: SiNextdotjs, color: "white" },
-    { name: "Angular", icon: SiAngular, color: "red.500" },
-    { name: "Tailwindcss", icon: SiTailwindcss, color: "teal.500" },
-    { name: "Nest.js", icon: SiNestjs, color: "red.500" },
-    { name: "Express.js", icon: SiExpress, color: "yellow.400" },
-    { name: "Git", icon: FaGitAlt, color: "orange.600" },
-    { name: "Docker", icon: FaDocker, color: "blue.500" },
-    { name: "AWS", icon: FaAws, color: "blue.500" },
-    { name: "AZURE", icon: VscAzure, color: "orange.500",  },
-    { name: "Redux", icon: SiRedux, color: "purple.500",  },
-    { name: "Oracle", icon: GrOracle, color: "orange.500",  },
-    // { name: "Kubernetes", icon: SiKubernetes, color: "blue.400" },
-    { name: "MongoDB", icon: SiMongodb, color: "green.500" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "blue.500" },
-    { name: "Redis", icon: SiRedis, color: "red.500" },
-    { name: "Firebase", icon: SiFirebase, color: "yellow.400" },
-    { name: "Chakra UI", icon: SiChakraui, color: "teal.500" },
-    { name: "Python", icon: FaPython, color: "yellow.400" },
-    { name: "Jest", icon: SiJest, color: "green.400" },
-    { name: "Cypress", icon: SiCypress, color: "white" },
-    { name: "MySql", icon: SiMysql, color: "yellow.400" },
-    { name: "Android", icon: SiAndroid, color: "green.500" },
-    { name: "Apple", icon: SiApple, color: "white" },
-    { name: "Expo", icon: SiExpo, color: "white" },
-  ];
-
   return (
     <Flex
-      direction={{ base: "row", md: "row" }}
-      wrap="wrap"
-      justify="center"
+      id="Tecnologias"
+      direction="column"
       align="center"
       w="full"
-      h={{ base: "auto", md: 65 }}
+      mt={{ base: 24, md: 32 }}
       p={{ base: 4, md: 0 }}
-      mt={53}
+      scrollMarginTop="90px"
     >
       <Text
-        w="75%"
+        w={{ base: "100%", md: "75%" }}
         fontSize={{ base: "1.8rem", md: "2.6rem" }}
-        fontWeight={"600"}
+        fontWeight="600"
         textAlign={{ base: "center", md: "start" }}
-        id="Tecnologias"
+        mb={2}
       >
         Tecnologias
       </Text>
-      <Flex justify="center" my="25px">
-        <Flex
-          borderWidth={1}
-          borderColor={"white"}
-          filter="brightness(1) drop-shadow(0 0 3px white)"
-          borderRadius={12}
-          p={5}
-          wrap="wrap"
-          justify="center"
-          w="70%"
-          alignItems="center"
-        >
-          {technologies.map((tech, index) => (
-            <Box
-              // bgColor="#fff"
-              key={tech.name}
-              mx={4}
-              mb={index % 8 === 7 ? 4 : 0}
+      <Text
+        w={{ base: "100%", md: "75%" }}
+        color="#BCBCBC"
+        textAlign={{ base: "center", md: "start" }}
+        mb={8}
+        fontSize={{ base: ".9rem", md: "1rem" }}
+      >
+        Ferramentas e conceitos que utilizo no dia a dia, organizados por área.
+      </Text>
+
+      <VStack spacing={8} w={{ base: "100%", md: "75%" }} align="stretch">
+        {technologyCategories.map((group) => (
+          <Box
+            key={group.category}
+            border="1px solid"
+            borderColor="bg.border"
+            bg="bg.surface"
+            backdropFilter="blur(6px)"
+            borderRadius="16px"
+            p={{ base: 4, md: 6 }}
+          >
+            <Text
+              fontSize={{ base: "1rem", md: "1.15rem" }}
+              fontWeight="600"
+              mb={4}
+              bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+              bgClip="text"
             >
-              <Icon as={tech.icon} w={10} h={10} color={tech.color} />
-            </Box>
-          ))}
-        </Flex>
-      </Flex>
+              {group.category}
+            </Text>
+            <Flex wrap="wrap" gap={3}>
+              {group.items.map((tech) => (
+                <Flex
+                  key={tech.name}
+                  align="center"
+                  gap={2}
+                  border="1px solid"
+                  borderColor="whiteAlpha.200"
+                  borderRadius="full"
+                  px={3}
+                  py={2}
+                  transition="all 0.2s ease"
+                  _hover={{ borderColor: "brand.400", bg: "whiteAlpha.100" }}
+                >
+                  <Icon as={tech.icon} w={5} h={5} color={tech.color} />
+                  <Text fontSize=".85rem" whiteSpace="nowrap">
+                    {tech.name}
+                  </Text>
+                </Flex>
+              ))}
+            </Flex>
+          </Box>
+        ))}
+      </VStack>
     </Flex>
   );
 }
