@@ -6,22 +6,22 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: `'Poppins', sans-serif`,
+    heading: `'Arial Narrow', 'Roboto Condensed', Impact, sans-serif`,
     body: `'Poppins', sans-serif`,
   },
   colors: {
     brand: {
-      50: "#eafcff",
-      100: "#c9f3ff",
-      400: "#13ADC7",
-      500: "#6978D1",
-      600: "#945DD6",
+      50: "#fff0e8",
+      100: "#ffd3bd",
+      400: "#ff5a1f",
+      500: "#e94b16",
+      600: "#c63d10",
     },
     bg: {
-      base: "#0b1120",
-      surface: "rgba(255, 255, 255, 0.03)",
-      surfaceHover: "rgba(255, 255, 255, 0.06)",
-      border: "rgba(255, 255, 255, 0.09)",
+      base: "#ece8df",
+      surface: "#f6f3ed",
+      surfaceHover: "#e5dfd5",
+      border: "#1d1d1b",
     },
   },
   styles: {
@@ -30,14 +30,14 @@ const theme = extendTheme({
         scrollBehavior: "smooth",
       },
       body: {
-        bg: "#0b1120",
+        bg: "#ece8df",
+        color: "#171717",
         backgroundImage:
-          "radial-gradient(circle at 15% 0%, rgba(19,173,199,0.16), transparent 45%), radial-gradient(circle at 85% 20%, rgba(148,93,214,0.14), transparent 45%)",
-        backgroundAttachment: "fixed",
-        color: "#fff",
+          "linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.025) 1px, transparent 1px)",
+        backgroundSize: "4px 4px, 4px 4px",
       },
       "::selection": {
-        background: "#945DD6",
+        background: "#ff5a1f",
         color: "#fff",
       },
     },

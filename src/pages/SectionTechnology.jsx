@@ -135,14 +135,16 @@ export default function SectionTechnology() {
       direction="column"
       align="center"
       w="full"
-      mt={{ base: 24, md: 32 }}
+      mt={{ base: 14, md: 22 }}
       p={{ base: 4, md: 0 }}
       scrollMarginTop="90px"
     >
       <Text
         w={{ base: "100%", md: "75%" }}
         fontSize={{ base: "1.8rem", md: "2.6rem" }}
-        fontWeight="600"
+        fontFamily="heading"
+        textTransform="uppercase"
+        fontWeight="900"
         textAlign={{ base: "center", md: "start" }}
         mb={2}
       >
@@ -150,7 +152,7 @@ export default function SectionTechnology() {
       </Text>
       <Text
         w={{ base: "100%", md: "75%" }}
-        color="#BCBCBC"
+        color="#5c5851"
         textAlign={{ base: "center", md: "start" }}
         mb={8}
         fontSize={{ base: ".9rem", md: "1rem" }}
@@ -159,22 +161,25 @@ export default function SectionTechnology() {
       </Text>
 
       <VStack spacing={8} w={{ base: "100%", md: "75%" }} align="stretch">
-        {technologyCategories.map((group) => (
+        {technologyCategories.map((group) => {
+          const isDatabase = group.category === "Banco de Dados";
+
+          return (
           <Box
             key={group.category}
             border="1px solid"
-            borderColor="bg.border"
-            bg="bg.surface"
+            borderColor={isDatabase ? "#f6f3ed" : "#171717"}
+            bg={isDatabase ? "#171717" : "#f6f3ed"}
             backdropFilter="blur(6px)"
-            borderRadius="16px"
+            borderRadius="0"
             p={{ base: 4, md: 6 }}
           >
             <Text
               fontSize={{ base: "1rem", md: "1.15rem" }}
               fontWeight="600"
               mb={4}
-              bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
-              bgClip="text"
+              color={isDatabase ? "#ff5a1f" : "#ff5a1f"}
+              textTransform="uppercase"
             >
               {group.category}
             </Text>
@@ -185,22 +190,30 @@ export default function SectionTechnology() {
                   align="center"
                   gap={2}
                   border="1px solid"
-                  borderColor="whiteAlpha.200"
-                  borderRadius="full"
+                  borderColor={isDatabase ? "whiteAlpha.500" : "#171717"}
+                  borderRadius="0"
                   px={3}
                   py={2}
                   transition="all 0.2s ease"
-                  _hover={{ borderColor: "brand.400", bg: "whiteAlpha.100" }}
+                  _hover={{
+                    borderColor: "#ff5a1f",
+                    bg: isDatabase ? "#2a2a28" : "#e8e2d8",
+                  }}
                 >
                   <Icon as={tech.icon} w={5} h={5} color={tech.color} />
-                  <Text fontSize=".85rem" whiteSpace="nowrap">
+                  <Text
+                    fontSize=".85rem"
+                    whiteSpace="nowrap"
+                    color={isDatabase ? "#f6f3ed" : "#171717"}
+                  >
                     {tech.name}
                   </Text>
                 </Flex>
               ))}
             </Flex>
           </Box>
-        ))}
+          );
+        })}
       </VStack>
     </Flex>
   );

@@ -17,10 +17,10 @@ export default function NavBar() {
       position="sticky"
       top={0}
       zIndex={20}
-      bg="rgba(11, 17, 32, 0.75)"
-      backdropFilter="blur(10px)"
+      bg="rgba(236, 232, 223, 0.92)"
+      backdropFilter="blur(12px)"
       borderBottom="1px solid"
-      borderColor="whiteAlpha.100"
+      borderColor="#171717"
     >
       <Flex
         maxW="1200px"
@@ -33,10 +33,11 @@ export default function NavBar() {
       >
         <Link href="#" _hover={{ textDecoration: "none" }}>
           <Text
-            fontWeight="700"
+            fontWeight="900"
             fontSize="1.15rem"
-            bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
-            bgClip="text"
+            letterSpacing=".08em"
+            textTransform="uppercase"
+            color="#171717"
           >
             Iago Neres
           </Text>
@@ -48,7 +49,9 @@ export default function NavBar() {
               key={link.href}
               href={link.href}
               fontSize=".95rem"
-              _hover={{ color: "#13ADC7", textDecoration: "none" }}
+              letterSpacing=".08em"
+              textTransform="uppercase"
+              _hover={{ color: "#ff5a1f", textDecoration: "none" }}
             >
               {link.label}
             </Link>
@@ -72,8 +75,8 @@ export default function NavBar() {
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           icon={isOpen ? <X size={22} /> : <Menu size={22} />}
           variant="ghost"
-          color="white"
-          _hover={{ bg: "whiteAlpha.100" }}
+          color="#171717"
+          _hover={{ bg: "blackAlpha.100" }}
           onClick={() => setIsOpen(!isOpen)}
         />
       </Flex>

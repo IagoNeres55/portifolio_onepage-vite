@@ -13,11 +13,11 @@ export default function Projects({
 }) {
   return (
     <Flex
-      bg="bg.surface"
+      bg="#f6f3ed"
       border="1px solid"
       borderColor={featured ? "brand.400" : "bg.border"}
       backdropFilter="blur(6px)"
-      borderRadius="20px"
+      borderRadius="0"
       w={{ base: "280px", md: "340px" }}
       gridColumn={featured ? { base: "auto", md: "span 2" } : "auto"}
       minH="480px"
@@ -25,11 +25,11 @@ export default function Projects({
       overflow="hidden"
       position="relative"
       transition="all 0.25s ease"
-      boxShadow={featured ? "0 12px 30px rgba(19, 173, 199, 0.18)" : "none"}
+      boxShadow={featured ? "8px 8px 0 #ff5a1f" : "5px 5px 0 rgba(23,23,23,.12)"}
       _hover={{
-        transform: "translateY(-8px)",
-        borderColor: "brand.400",
-        boxShadow: "0 12px 30px rgba(19, 173, 199, 0.18)",
+        transform: "translateY(-5px)",
+        borderColor: "#ff5a1f",
+        boxShadow: "8px 8px 0 #ff5a1f",
       }}
     >
       {featured && (
@@ -43,8 +43,8 @@ export default function Projects({
           gap={1}
           px={3}
           py={1}
-          borderRadius="full"
-          bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+          borderRadius="0"
+          bg="#ff5a1f"
           color="#fff"
           fontWeight="600"
           fontSize="0.7rem"
@@ -68,10 +68,10 @@ export default function Projects({
           w="full"
           align="center"
           justify="center"
-          bgGradient="linear(135deg, #0f1624, #1b2440)"
+          bg="#171717"
           fontSize="2.2rem"
           fontWeight="700"
-          color="whiteAlpha.300"
+          color="whiteAlpha.500"
           fontFamily="mono"
         >
           {"</>"}
@@ -79,10 +79,10 @@ export default function Projects({
       )}
 
       <Flex direction="column" flex="1" p={5} gap={3}>
-        <Text fontSize="1.25rem" fontWeight="600">
+        <Text fontSize="1.25rem" fontWeight="800" textTransform="uppercase" fontFamily="heading">
           {titulo}
         </Text>
-        <Text fontSize=".9rem" color="whiteAlpha.800" flex="1">
+        <Text fontSize=".9rem" color="#5c5851" flex="1">
           {texto}
         </Text>
 
@@ -93,9 +93,9 @@ export default function Projects({
                 <Badge
                   px={2}
                   py={0.5}
-                  borderRadius="full"
-                  bg="whiteAlpha.100"
-                  color="brand.100"
+                  borderRadius="0"
+                  bg="#e8e2d8"
+                  color="#171717"
                   fontWeight="500"
                   fontSize="0.65rem"
                   textTransform="none"
@@ -112,9 +112,9 @@ export default function Projects({
             leftIcon={<Github size={16} />}
             fontSize="0.85rem"
             color="#fff"
-            bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
-            borderRadius="28px"
-            _hover={{ filter: "brightness(1.15)" }}
+            bg="#ff5a1f"
+            borderRadius="0"
+            _hover={{ bg: "#171717" }}
             onClick={() => window.open(link, "_blank")}
           >
             Ver código
@@ -124,9 +124,9 @@ export default function Projects({
             leftIcon={<Hammer size={14} />}
             fontSize="0.8rem"
             variant="outline"
-            borderColor="whiteAlpha.300"
-            color="whiteAlpha.600"
-            borderRadius="28px"
+            borderColor="#aaa49a"
+            color="#5c5851"
+            borderRadius="0"
             isDisabled
             _disabled={{ opacity: 1, cursor: "default" }}
           >
@@ -137,9 +137,9 @@ export default function Projects({
             leftIcon={<Lock size={14} />}
             fontSize="0.8rem"
             variant="outline"
-            borderColor="whiteAlpha.300"
-            color="whiteAlpha.600"
-            borderRadius="28px"
+            borderColor="#aaa49a"
+            color="#5c5851"
+            borderRadius="0"
             isDisabled
             _disabled={{ opacity: 1, cursor: "default" }}
           >

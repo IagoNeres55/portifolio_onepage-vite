@@ -5,8 +5,8 @@ export default function Abount() {
   return (
     <Flex
       id="Sobre"
-      color="white"
-      mt={{ base: 24, md: 32 }}
+      color="#171717"
+      mt={{ base: 14, md: 22 }}
       justify="center"
       alignItems="center"
       w="full"
@@ -18,7 +18,9 @@ export default function Abount() {
       <Text
         w={{ base: "100%", md: "75%" }}
         fontSize={{ base: "1.8rem", md: "2.6rem" }}
-        fontWeight="600"
+        fontFamily="heading"
+        textTransform="uppercase"
+        fontWeight="900"
         textAlign={{ base: "center", md: "start" }}
         mb={4}
       >
@@ -27,7 +29,7 @@ export default function Abount() {
 
       <Text
         w={{ base: "100%", md: "75%" }}
-        color="#BCBCBC"
+        color="#5c5851"
         textAlign={{ base: "center", md: "start" }}
         fontSize={{ base: "1rem", md: "1.15rem" }}
         mb={12}
@@ -45,7 +47,7 @@ export default function Abount() {
         align="center"
         w="full"
         p={5}
-        color="white"
+        color="#171717"
         borderRadius="md"
       >
         <Flex
@@ -59,7 +61,7 @@ export default function Abount() {
             position="absolute"
             h="2px"
             top="22px"
-            bgGradient="linear(to-r, #13ADC7, #6978D1, #945DD6)"
+            bg="#ff5a1f"
             w={{ base: 0, md: "full" }}
           />
           {trilhaDev.map((item) => (
@@ -79,11 +81,11 @@ export default function Abount() {
               >
                 <Circle
                   size="15px"
-                  bgGradient="linear(to-r, #13ADC7, #945DD6)"
+                  bg="#ff5a1f"
                   border="3px solid"
-                  borderColor="#0b1120"
+                  borderColor="#ece8df"
                 />
-                <Text fontWeight="bold" bgGradient="linear(to-r, #13ADC7, #945DD6)" bgClip="text">
+                <Text fontWeight="bold" color="#ff5a1f">
                   {item.year}
                 </Text>
                 <Text
@@ -91,7 +93,7 @@ export default function Abount() {
                   mt={{ base: 0, md: 2 }}
                   whiteSpace="wrap"
                   textAlign="center"
-                  color="whiteAlpha.800"
+                  color="#5c5851"
                 >
                   {item.description}
                 </Text>

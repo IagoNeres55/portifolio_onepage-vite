@@ -7,8 +7,8 @@ export default function SectionProjects() {
   return (
     <Flex
       id="projetos"
-      color="white"
-      mt={{ base: 20, md: 32 }}
+      color="#171717"
+      mt={{ base: 12, md: 20 }}
       w="full"
       alignItems="center"
       justify="center"
@@ -19,7 +19,10 @@ export default function SectionProjects() {
       <Text
         width={{ base: "100%", md: "70%" }}
         fontSize={{ base: "1.8rem", md: "2.6rem" }}
-        fontWeight="600"
+        fontFamily="heading"
+        textTransform="uppercase"
+        fontWeight="900"
+        letterSpacing=".02em"
         textAlign={{ base: "center", md: "start" }}
         mb={2}
       >
@@ -27,7 +30,7 @@ export default function SectionProjects() {
       </Text>
       <Text
         width={{ base: "100%", md: "70%" }}
-        color="#BCBCBC"
+        color="#5c5851"
         textAlign={{ base: "center", md: "start" }}
         mb={10}
         fontSize={{ base: ".9rem", md: "1rem" }}
@@ -40,7 +43,7 @@ export default function SectionProjects() {
         columns={{ base: 1, md: 2, lg: 3 }}
         spacing={{ base: 8, md: 10 }}
         justifyItems="center"
-        w={{ base: "100%", md: "80%" }}
+        w={{ base: "100%", md: "86%" }}
         mb={10}
       >
         {listProjects.map((project) => (
@@ -60,11 +63,12 @@ export default function SectionProjects() {
       <Button
         leftIcon={<Github size={18} />}
         variant="outline"
-        borderColor="whiteAlpha.400"
-        borderRadius="28px"
-        color="white"
+        borderColor="#171717"
+        borderRadius="0"
+        color="#171717"
+        textTransform="uppercase"
         mb={10}
-        _hover={{ bg: "whiteAlpha.100", borderColor: "brand.400" }}
+        _hover={{ bg: "#171717", color: "#fff" }}
         onClick={() => window.open("https://github.com/IagoNeres55", "_blank")}
       >
         Ver mais projetos no GitHub
