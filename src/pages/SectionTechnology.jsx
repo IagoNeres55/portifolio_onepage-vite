@@ -16,7 +16,6 @@ import {
   SiChakraui,
   SiPostgresql,
   SiMysql,
-  SiOracle,
   SiMongodb,
   SiRedis,
   SiRedux,
@@ -85,7 +84,7 @@ const technologyCategories = [
     items: [
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MySQL", icon: SiMysql, color: "#F2C94C" },
-      { name: "Oracle", icon: SiOracle, color: "#F2622E" },
+      { name: "Oracle", icon: Database, color: "#F2622E" },
       { name: "MongoDB / NoSQL", icon: SiMongodb, color: "#47A248" },
       { name: "Redis", icon: SiRedis, color: "#DC382D" },
     ],
